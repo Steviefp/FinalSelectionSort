@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 public class testSelectionSort {
 	@Test
 	public void test() {
-		testPositive();
-		testNegative();
-		testMixed();
+		//testPositive();
+		//testNegative();
+		//testMixed();
 	}
 
     @Test
@@ -26,11 +26,15 @@ public class testSelectionSort {
         Sortedarr[3] = 9;
         Sortedarr[4] = 10;
         
+        SelectionSort test = new SelectionSort();
+        
+        test.SelectionSort(arr);
+        
       
         
         /** add tests to check for this unit test **/
         for(int i = 0; i < Sortedarr.length; i++) {
-        	assert(Sortedarr[i]>0);
+        	assert(arr[i] == Sortedarr[i]);
         }
     }
     @Test
@@ -43,16 +47,19 @@ public class testSelectionSort {
         arr[4] = -2;
         
         int[] Sortedarr = new int[5];
-        Sortedarr[0] = -2;
-        Sortedarr[1] = -7;
+        Sortedarr[0] = -10;
+        Sortedarr[1] = -9;
         Sortedarr[2] = -8;
-        Sortedarr[3] = -9;
-        Sortedarr[4] = -10;
+        Sortedarr[3] = -7;
+        Sortedarr[4] = -2;
         
+        SelectionSort test = new SelectionSort();
         
+        test.SelectionSort(arr);
         /** add tests to check for this unit test **/
         for(int i = 0; i < Sortedarr.length; i++) {
-        	assert(Sortedarr[i]<0);
+        	System.out.println(arr[i]);
+        	assert(arr[i] == Sortedarr[i]);
         }
     }
     
@@ -72,24 +79,16 @@ public class testSelectionSort {
         Sortedarr[3] = 8;
         Sortedarr[4] = 9;
         
-        boolean pos = false;
-        boolean neg = false;
-        boolean zero = false;
+        
+        
+        SelectionSort test = new SelectionSort();
+        
+        test.SelectionSort(arr);
         
         /** add tests to check for this unit test **/
         for(int i = 0; i < Sortedarr.length; i++) {
-        	if(Sortedarr[i] > 0) {
-        		pos = true;
-        	}
-        	else if(Sortedarr[i] < 0) {
-        		neg = true;
-        	}
-        	else if(Sortedarr[i] == 0) {
-        		zero = true;
-        	}	
+        	assert(arr[i] == Sortedarr[i]);
         }
-        assert(pos == neg == zero);
-        
         /** Test data contains with both positive, negative and zeros **/
     }
 
